@@ -1,0 +1,39 @@
+# Configuration Jekyll de base
+title: POC Trame
+description: Template pour créer, maintenir et dispenser des cours
+baseurl: "/poc-trame"
+url: ""
+
+# Configuration de construction
+markdown: kramdown
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclusions lors de la construction
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
+  - README.md
+
+# Paramètres des collections
+collections:
+  formation:
+    output: true
+    permalink: /:collection/:path/
+
+# Paramètres par défaut
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "docs/formation"
+    values:
+      layout: page
+      category: formation
